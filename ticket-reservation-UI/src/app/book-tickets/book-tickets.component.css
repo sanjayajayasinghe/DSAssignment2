@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+   
+}
+
+.element{
+  width:300px;
+  margin:10px;
+  float:left;
+}

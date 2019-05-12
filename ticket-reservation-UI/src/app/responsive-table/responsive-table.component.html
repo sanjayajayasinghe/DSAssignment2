@@ -1,0 +1,25 @@
+<table>
+	<thead>
+	<tr>
+		<th>From</th>
+		<th>To</th>
+		<th>Departure Time</th>
+		<th>Arraival Time</th>
+		<th>status</th>
+		<th *ngIf="buttonVisible">Cost</th>
+		<th *ngIf="buttonVisible">Book now</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let row of rowsData | rowToFilter:to">
+		<td>{{row.from}}</td>
+		<td>{{row.to}}</td>
+		<td>{{row.departureTime}}</td>
+		<td>{{row.arraivalTime}}</td>
+		<td>{{row.status}}</td>
+		<td *ngIf="buttonVisible">{{row.cost}}</td>
+		<td *ngIf="buttonVisible"><button (click)="sendTravelId(row.to,row.from,row.travelID,1,row.cost)" >Book Now!</button></td>
+	</tr>
+
+	</tbody>
+</table>

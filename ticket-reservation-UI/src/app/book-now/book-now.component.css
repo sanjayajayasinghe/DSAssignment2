@@ -1,0 +1,20 @@
+
+.gridContainer{
+   
+} 
+.rowSeat{
+    width: 100%;
+}
+.doubleSeat{
+   
+    margin:100px;
+}
+.seat{
+    width:15%;
+    height:10%;
+    background-color: lightblue;
+    float: left;
+    margin: 5px;
+    border: 9px inset #1C6EA4;
+border-radius: 17px;
+} 

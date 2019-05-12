@@ -1,0 +1,24 @@
+
+<input type="button" class="mobile" (click)="change()" value="=div" />
+
+
+
+<div [ngClass]="{navup:!bool,navdown:bool}">
+
+  <ul >
+    <li><a routerLink="Home" [routerLinkActive]="['active']">Home</a></li>
+    <li><a routerLink="News" [routerLinkActive]="['active']">News</a></li>
+    <li><a routerLink="Timetable" [routerLinkActive]="['active']">My Time Table</a></li>
+    <li><a routerLink="BookTickets" [routerLinkActive]="['active']">Book Tickets</a></li>
+    <li><a routerLink="Contact" [routerLinkActive]="['active']">Contact</a></li>
+    <li [ngClass]="'about'" [routerLinkActive]="['active']"><a  routerLink="About" >About</a></li>
+    <li [ngClass]="'right'"><a routerLink="Contact" [ngClass]="'login'" >Login</a></li>
+    
+  </ul>
+</div>
+
+  
+
+
+
+

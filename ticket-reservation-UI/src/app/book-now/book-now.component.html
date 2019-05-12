@@ -1,0 +1,22 @@
+
+<div style="clear:both">
+<mat-form-field>
+    <mat-label>Class</mat-label>
+    <mat-select (ngModelChange)="select(selectValue)" [(ngModel)]="selectValue">
+      <mat-option *ngFor="let c of class_" [value]="c.value">
+        {{c.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+  <div style="clear:both">
+   <h4> Total Cost:Rs.{{totalCost}}</h4>
+    </div>
+<div>
+  <div class="seat" [style.background-color]="seat.availabality?(seat.select?'green':'lightblue'):'red'" (click)="seatBook(seat.number,seat.availabality,seat.select)" *ngFor="let seat of seats">{{seat.number}}</div>
+
+</div>
+<div style="clear:both"><button (click)="bookNow()">Book now!</button></div>
+
+ 
+ 

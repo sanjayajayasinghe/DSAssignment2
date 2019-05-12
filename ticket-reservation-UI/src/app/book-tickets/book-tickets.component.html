@@ -1,0 +1,50 @@
+
+
+  
+  <div >
+    <div class="container">
+    <form [formGroup]="stateForm">
+        <div class="element">
+        <label>From:</label>
+      <mat-form-field>
+        <input type="text" matInput placeholder="From Station" formControlName="stateGroup" required [matAutocomplete]="autoGroup" [(ngModel)]="inputFrom">
+          <mat-autocomplete #autoGroup="matAutocomplete">
+            <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+              <mat-option *ngFor="let name of group.names" [value]="name">
+                {{name}}
+              </mat-option>
+          </mat-optgroup>
+        </mat-autocomplete>
+      </mat-form-field>
+  </div>
+  <div class="element">
+      <label>Date:</label>
+      <mat-form-field class="example-full-width">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" [formControl]="date" [(ngModel)]="inputDate" (ngModelChange)="onChangeDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+
+  <div class="element">
+      <label>To:</label>
+      <mat-form-field>
+        <input type="text" matInput placeholder="To Station" formControlName="stateGroup" required [matAutocomplete]="autoGroup" [(ngModel)]="inputTo">
+          <mat-autocomplete #autoGroup="matAutocomplete">
+            <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+              <mat-option *ngFor="let name of group.names" [value]="name">
+                {{name}}
+              </mat-option>
+          </mat-optgroup>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    
+    
+   
+      </form>
+    </div>
+    {{inputDate|date:'fullDate'}}
+    <app-responsive-table [rowsData]="rows" [buttonVisible]="true" [to]="inputTo"></app-responsive-table>
+</div>
